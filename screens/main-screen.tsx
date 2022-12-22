@@ -7,15 +7,17 @@ import {ImageSlider} from '../components/image-slider';
 import {Searchbar} from '../components/searchbar';
 import {Colors} from '../lib/colors';
 import {AddressBar} from '../components/address-bar';
+import {useTypedSelector} from '../hooks/useTypedSelector';
 
 const MainScreen = ({navigation}: Props) => {
+  const {username} = useTypedSelector(state => state.auth);
   return (
     <View style={{paddingTop: 8, flexDirection: 'column', flex: 1}}>
       <AddressBar />
       <ImageSlider />
       <View style={styles.mainContainer}>
         <View style={styles.itemContainer}>
-          <Text style={styles.text}>Welcome Elif Ipek!</Text>
+          <Text style={styles.text}>Welcome {username}!</Text>
         </View>
         <View style={styles.itemContainer}>
           <Searchbar />

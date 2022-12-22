@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "718976073300",
+    "project_id": "getir-app-409a1",
+    "storage_bucket": "getir-app-409a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718976073300:android:19b25974380c3181f2b7c1",
+        "android_client_info": {
+          "package_name": "com.getir"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718976073300-41akt1g0s8699tqrfevtaekffjdu4o7i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA48F8arW4Wf62TTkE9XMvD8yylJozzn0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718976073300-41akt1g0s8699tqrfevtaekffjdu4o7i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "718976073300-5c62kjjgl6354gcjdd9k8oqdl5curu7b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.getir"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
