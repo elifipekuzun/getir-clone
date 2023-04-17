@@ -13,7 +13,8 @@ const {width, height} = Dimensions.get('window');
 export const NotificationAlert: React.FC<{
   message: string;
   onCancel: () => void;
-}> = ({message, onCancel}) => {
+  onOkay: () => void;
+}> = ({message, onCancel, onOkay}) => {
   const transition = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -52,6 +53,7 @@ export const NotificationAlert: React.FC<{
             </View>
           </TouchableOpacity>
           <TouchableOpacity
+            onPress={onOkay}
             style={[styles.buttonContainer, {backgroundColor: '#654094'}]}>
             <View>
               <Text style={styles.buttonText}>Okay</Text>

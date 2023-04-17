@@ -4,4 +4,5 @@ export enum ActionTypes {
   authSuccess = 'AUTH_SUCCESS',
   authError = 'AUTH_ERROR',
   getUser = 'GET_USER',
+  logout = 'LOGOUT',
 }

@@ -6,10 +6,13 @@ import {AccountItem} from './account-item';
 import {useTypedSelector} from '../../hooks/useTypedSelector';
 import {Colors} from '../../lib/colors';
 import {NotificationAlert} from '../notification-alert';
+import {useActions} from '../../hooks/useActions';
 
 export const AuthenticatedAccountList: React.FC = () => {
   const {email, phoneNumber, username} = useTypedSelector(state => state.auth);
   const [isAlertVisible, setIsAlertVisible] = useState(false);
+
+  const {logout} = useActions();
 
   return (
     <>
@@ -60,6 +63,10 @@ export const AuthenticatedAccountList: React.FC = () => {
       </ScrollView>
       {isAlertVisible && (
         <NotificationAlert
+          onOkay={() => {
+            logout();
+            setIsAlertVisible(!isAlertVisible);
+          }}
           onCancel={() => setIsAlertVisible(!isAlertVisible)}
           message="Çıkış yapmak istediğinizden emin misiniz?"
         />

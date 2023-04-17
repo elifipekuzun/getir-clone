@@ -1,4 +1,5 @@
 import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Dispatch} from 'redux';
 import {Actions} from '../actions';
@@ -59,5 +60,13 @@ export const getUserData = () => {
       const user = JSON.parse(userData);
       dispatch({type: ActionTypes.getUser, payload: user});
     }
+  };
+};
+
+export const logout = () => {
+  return async (dispatch: Dispatch<Actions>) => {
+    await auth().signOut();
+    await AsyncStorage.removeItem('user');
+    dispatch({type: ActionTypes.logout});
   };
 };

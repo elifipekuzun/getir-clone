@@ -35,7 +35,12 @@ export const AuthForm: React.FC<{formType: string}> = ({formType}) => {
 
   const submitHandler = async (event: GestureResponderEvent) => {
     event.preventDefault();
-    await loginWithPhoneNumber(phoneNumber);
+    if (formStatus === 'login') {
+      const confirmation = await auth().verifyPhoneNumber('+90 ' + phoneNumber);
+      console.log(confirmation);
+
+      await loginWithPhoneNumber(phoneNumber);
+    }
   };
   useEffect(() => {
     const codeConfirmation = async () => {

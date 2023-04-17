@@ -9,7 +9,7 @@ const AccountScreen = () => {
   const {uid} = useTypedSelector(state => state.auth);
   return (
     <View style={styles.screen}>
-      {!uid ? <UnauthAccountList /> : <AuthenticatedAccountList />}
+      {uid.length === 0 ? <UnauthAccountList /> : <AuthenticatedAccountList />}
     </View>
   );
 };

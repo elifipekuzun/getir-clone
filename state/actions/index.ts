@@ -34,10 +34,14 @@ interface GetUserDataAction {
     address: string[];
   };
 }
+interface LogoutAction {
+  type: ActionTypes.logout;
+}
 
 export type Actions =
   | LoginAction
   | SignupAction
   | AuthSuccessAction
   | AuthErrorAction
-  | GetUserDataAction;
+  | GetUserDataAction
+  | LogoutAction;

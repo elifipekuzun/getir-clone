@@ -51,6 +51,15 @@ const authReducer = (
         uid: action.payload.uid,
         error: null,
       };
+    case ActionTypes.logout:
+      return {
+        isAuthenticated: false,
+        phoneNumber: '',
+        email: '',
+        username: '',
+        uid: '',
+        error: null,
+      };
     default:
       return state;
   }
